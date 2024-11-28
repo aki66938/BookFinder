@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Windows](https://img.shields.io/badge/Platform-Windows-blue.svg)](https://www.microsoft.com/windows)
 
-[English](README.md#english) | [中文](README.md#中文)
+[English](README_EN.md) | [中文](README.md)
 
 <div id="中文">
 
@@ -26,27 +26,27 @@ BookFinder 是一个强大的多源中文图书搜索工具，支持从多个在
 ## 功能特点
 
 - **多源搜索**：支持从多个来源搜索图书信息
-  - 📚 豆瓣图书
-  - 📚 香港美国书店
-  - 📚 台湾美国书店
-  - 📚 亚马逊图书
-  - 📚 Google Books
+  - 豆瓣图书
+  - 香港美国书店
+  - 台湾美国书店
+  - 亚马逊图书
+  - Google Books
 
 - **丰富的图书信息**
-  - 📖 基本信息：书名、作者、出版社、出版年份、ISBN等
-  - 📝 详细介绍：内容简介、作者简介
-  - 🖼️ 图片资源：图书封面（自动上传至图床）
-  - 🔗 图书链接生成
+  - 基本信息：书名、作者、出版社、出版年份、ISBN等
+  - 详细介绍：内容简介、作者简介
+  - 图片资源：图书封面（自动上传至图床）
+  - 图书链接生成
 
 - **自适应信息提取**
-  - ✨ 自动清理和格式化文本
-  - 🎯 自适应识别和提取关键信息
-  - 🔄 处理多种数据格式和编码
+  - 自动清理和格式化文本
+  - 自适应识别和提取关键信息
+  - 处理多种数据格式和编码
 
 - **错误处理**
-  - ⚡ 异常处理机制
-  - 🔄 自动重试机制
-  - 📝 详细的错误日志
+  - 异常处理机制
+  - 自动重试机制
+  - 详细的错误日志
 
 ## 系统要求
 
@@ -221,223 +221,3 @@ db_book_search/
    - 确保已安装所有依赖
    - 检查Python版本是否满足要求
    - 查看错误日志进行排查
-
----
-
-<div id="english">
-
-# BookFinder 📚
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Requirements](#requirements)
-- [Quick Start](#quick-start)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [FAQ](#faq)
-- [Contributing](#contributing)
-
-## Introduction
-
-BookFinder is a powerful multi-source Chinese book search tool that supports searching book information from multiple online bookstores and book databases. It helps you quickly obtain comprehensive book information and improve book retrieval efficiency.
-
-## Features
-
-- **Multi-source Search**
-  - 📚 Douban Books
-  - 📚 Hong Kong Books
-  - 📚 Taiwan Books
-  - 📚 Amazon Books
-  - 📚 Google Books
-
-- **Rich Book Information**
-  - 📖 Basic Info: Title, Author, Publisher, Publication Year, ISBN, etc.
-  - 📝 Detailed Description: Content Summary, Author Biography
-  - 🖼️ Image Resources: Book Cover (Auto-upload to Image Host)
-  - 🔗 Book Link Generation
-
-- **Adaptive Information Extraction**
-  - ✨ Automatic Text Cleaning and Formatting
-  - 🎯 Adaptive Recognition and Key Information Extraction
-  - 🔄 Multiple Data Format and Encoding Support
-
-- **Error Handling**
-  - ⚡ Exception Handling Mechanism
-  - 🔄 Automatic Retry Mechanism
-  - 📝 Detailed Error Logging
-
-## Requirements
-
-- Python 3.8+
-- Windows Operating System
-- Internet Access (VPN might be required for some sources)
-
-## Quick Start
-
-1. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Configure Environment Variables**
-   ```bash
-   # Windows
-   copy .env.template .env
-   # or on Linux/macOS
-   cp .env.template .env
-   ```
-
-3. **Modify Configuration**
-   Edit the configuration items in the `.env` file as needed
-
-## Usage
-
-1. Configure environment variables:
-   
-   Copy `.env.template` file and rename it to `.env`, then modify the configuration as needed:
-
-   ```bash
-   # Windows
-   copy .env.template .env
-   # or on Linux/macOS
-   cp .env.template .env
-   ```
-
-   Configure the following environment variables in the `.env` file:
-
-   ```bash
-   # Image host feature switch (true/false)
-   IMGHOST_ENABLED=false
-
-   # If image host feature is enabled (IMGHOST_ENABLED=true), configure the following variables:
-   IMGHOST_BASE_URL=your_imghost_url      # Image host server base URL
-   IMGHOST_EMAIL=your_email               # Image host account email
-   IMGHOST_PASSWORD=your_password         # Image host account password
-   ```
-
-   If image host feature is not enabled (IMGHOST_ENABLED=false), the program will only display the local path of the image.
-
-2. Run the main program:
-```bash
-python main.py
-```
-
-3. Select search source:
-   - 1: Douban Books
-   - 2: Hong Kong Books
-   - 3: Taiwan Books
-   - 4: Amazon Books
-   - 5: Google Books
-   - 0: Back
-
-4. Input search keywords:
-   - Support book title, author, ISBN, etc.
-   - Suggest using accurate book title or ISBN for search
-   - Empty input will return to search source selection
-
-5. View search results:
-   - Display the list of basic information of matched books
-   - Input the serial number to view detailed information
-   - Input 'b' to return to search
-   - Invalid input will prompt to re-select
-
-6. Book details display:
-   - Basic information: book title, author, publisher, etc.
-   - Content summary and author biography
-   - Book cover image (support auto-upload to image host)
-   - Book link
-
-## Image Host Configuration
-
-This project supports using Lsky Pro image host service to store book covers. If you want to use this feature:
-
-1. Ensure you have a valid Lsky Pro image host service
-2. Configure the following environment variables:
-   - `IMGHOST_ENABLED=true` to enable image host feature
-   - `IMGHOST_BASE_URL` to set your image host server base URL (e.g. https://img.example.com)
-   - `IMGHOST_EMAIL` to set your image host account email
-   - `IMGHOST_PASSWORD` to set your image host account password
-
-3. Test image host feature:
-   ```bash
-   python get_token.py
-   ```
-   If configured correctly, it will display "Login successful".
-
-## License
-
-This project is for learning and research purposes only, and is not allowed to be used for commercial purposes. When using this project, please follow the terms and conditions of the relevant websites.
-
-## Open Source License
-
-This project uses the MIT License. See [MIT License](https://opensource.org/licenses/MIT) for details.
-
-## Project Structure
-
-```
-db_book_search/
-├── main.py              # Main program entry
-├── config.py            # Main configuration file
-├── get_token.py         # Image host token acquisition tool
-├── requirements.txt     # Dependency list
-├── token.json          # Image host token configuration (optional)
-└── sources/            # Data source module
-    ├── utils.py        # Common utility functions
-    ├── image.py        # Image processing module
-    ├── output.py       # Output formatting module
-    ├── config.py       # Data source configuration file
-    ├── douban/         # Douban Books module
-    ├── megbookhk/      # Hong Kong Books module
-    ├── megbooktw/      # Taiwan Books module
-    ├── amazon/         # Amazon Books module
-    └── google/         # Google Books module
-```
-
-## Development Status
-
-- [x] Douban Books search
-- [x] Hong Kong Books search
-- [x] Taiwan Books search
-- [x] Amazon Books search
-- [x] Google Books search
-
-## Notes
-
-1. Image host feature is optional:
-   - If token.json is not configured, the program can still run normally
-   - If image host is not configured, the book cover will only display the original URL
-   - Configuring image host can achieve permanent storage and fast access of book covers
-
-2. Network access notes:
-   - Some search sources may require using a VPN to access
-   - Please ensure your network environment is normal
-   - The program includes an automatic retry mechanism, but may still be affected by network conditions
-
-3. Search result notes:
-   - The accuracy and completeness of search results depend on the real-time status of each data source
-   - Different data sources may have different information
-   - Suggest comparing multiple data sources
-
-4. Performance optimization:
-   - The program includes a caching mechanism to reduce repeated requests
-   - Supports asynchronous processing and concurrent search
-   - Automatically cleans up temporary files and cache
-
-## FAQ
-
-1. No search results:
-   - Check if the keywords are accurate
-   - Try using different search sources
-   - Ensure network connection is normal
-
-2. Image upload failed:
-   - Verify token.json configuration is correct
-   - Check network connection status
-   - View error log for detailed information
-
-3. Program runtime error:
-   - Ensure all dependencies are installed
-   - Check Python version meets requirements
-   - View error log for troubleshooting
