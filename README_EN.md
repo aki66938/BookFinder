@@ -13,9 +13,12 @@
 - [System Requirements](#system-requirements)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
+- [Image Host Configuration](#image-host-configuration)
 - [Project Structure](#project-structure)
-- [FAQ](#faq)
-- [Contributing](#contributing)
+- [Development Status](#development-status)
+- [Notes](#notes)
+- [License](#license)
+- [Open Source License](#open-source-license)
 
 ## Introduction
 
@@ -120,6 +123,10 @@ python main.py
    - Input the serial number to view detailed information
    - Input 'b' to return to search
    - Invalid input will prompt to re-select
+
+## Image Host Configuration
+
+Please refer to the `.env` file for image host configuration.
 
 ## Project Structure
 
